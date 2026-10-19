@@ -1,0 +1,47 @@
+# Software Engineering Intern
+
+**Company:** TechNova Solutions  
+**Location:** Bengaluru, India  
+**Duration:** 3–6 months  
+**Employment Type:** Internship
+
+## About the Role
+
+We are looking for a motivated Software Engineering Intern to help develop, test, and maintain software applications. You will work with experienced engineers to build reliable backend services, integrate APIs, debug issues, and improve existing code.
+
+## Responsibilities
+
+- Develop and maintain applications using Python.
+- Design, implement, and test REST APIs.
+- Write clean, reusable, and well-documented code.
+- Work with databases to store, retrieve, and manage application data.
+- Debug software issues and contribute to code reviews.
+- Use Git and GitHub for version control and collaborative development.
+- Write unit tests and help improve software reliability.
+- Collaborate with team members during development and testing.
+
+## Required Qualifications
+
+- Basic proficiency in Python programming.
+- Understanding of data structures and algorithms.
+- Familiarity with REST APIs and HTTP fundamentals.
+- Basic knowledge of SQL and relational databases.
+- Familiarity with Git and GitHub.
+- Strong problem-solving and debugging skills.
+- Currently pursuing or recently completed a degree in Computer Science, Information Technology, or a related field.
+
+## Preferred Qualifications
+
+- Experience with Flask or FastAPI.
+- Familiarity with Docker and containerization.
+- Basic understanding of cloud platforms such as AWS or Google Cloud.
+- Exposure to automated testing using pytest.
+- Experience building personal projects or contributing to open-source repositories.
+
+## What You Will Learn
+
+- Backend application development.
+- API design and integration.
+- Software testing and debugging.
+- Collaborative software development workflows.
+- Writing maintainable, production-oriented code.
