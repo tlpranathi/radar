@@ -1,3 +1,4 @@
+from google.genai import types
 from tools.search_postings import search_postings
 from tools.analyze_job import extract_requirements
 from tools.research_company import research_company
@@ -23,3 +24,40 @@ def execute_tool(tool_name, arguments):
 
 def get_available_tools():
     return list(TOOLS.keys())
+
+def get_gemini_tools():
+    search_postings_declaration = types.FunctionDeclaration(
+        name="search_postings",
+        description=(
+            "Search for job and internship postings based on role, "
+            "keywords, and location."
+        ),
+        parameters=types.Schema(
+            type=types.Type.OBJECT,
+            properties={
+                "role": types.Schema(
+                    type=types.Type.STRING,
+                    description="The job role to search for."
+                ),
+                "keywords": types.Schema(
+                    type=types.Type.STRING,
+                    description="Additional keywords to narrow the search."
+                ),
+                "location": types.Schema(
+                    type=types.Type.STRING,
+                    description="The location to search in."
+                ),
+                "results_per_page": types.Schema(
+                    type=types.Type.INTEGER,
+                    description="Number of job results to retrieve."
+                )
+            },
+            required=["role"]
+        )
+    )
+
+    search_tool = types.Tool(
+        function_declarations=[search_postings_declaration]
+    )
+
+    return [search_tool]
