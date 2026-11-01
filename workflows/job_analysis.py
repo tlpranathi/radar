@@ -1,3 +1,4 @@
+from tools.generate_prep_plan import generate_prep_plan
 from tools.analyze_job import extract_requirements
 from tools.parse_resume import parse_resume
 from tools.match_resume import match_resume
@@ -23,20 +24,29 @@ def analyze_job_workflow(jd_text, resume_path, company, role):
         raise ValueError("Role cannot be empty")
 
     # step 1: extract requirements from the job description
-    print("\n[1/4] Extracting job requirements...")
+    print("\n[1/5] Extracting job requirements...")
     requirements = extract_requirements(jd_text)
 
     # step 2: extract text from the resume
-    print("\n[2/4] Parsing resume...")
+    print("\n[2/5] Parsing resume...")
     resume_text = parse_resume(resume_path)
 
     # step 3: compare resume with job requirements
-    print("\n[3/4] Matching resume against requirements...")
+    print("\n[3/5] Matching resume against requirements...")
     resume_match = match_resume(requirements, resume_text)
 
     # step 4: research company interview experiences
-    print("\n[4/4] Researching company interviews...")
+    print("\n[4/5] Researching company interviews...")
     interview_research = research_company(company, role)
+
+    # step 5: generate personalized preparation plan
+    print("\n[5/5] Generating preparation plan...")
+
+    prep_plan = generate_prep_plan(
+        requirements,
+        resume_match,
+        interview_research
+    )
 
     # combine all results
     return {
@@ -45,4 +55,5 @@ def analyze_job_workflow(jd_text, resume_path, company, role):
         "requirements": requirements,
         "resume_match": resume_match,
         "interview_research": interview_research,
+        "prep_plan": prep_plan,
     }
