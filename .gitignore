@@ -4,6 +4,8 @@ __pycache__/
 .env
 *.db
 .DS_Store
+.venv_old/
+
 
 data/resume.pdf
 data/resume.docx
